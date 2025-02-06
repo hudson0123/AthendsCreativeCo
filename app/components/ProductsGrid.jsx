@@ -15,7 +15,7 @@ export default function ProductsGrid() {
     return (
         <>
             <div id="services"></div>
-            <div className="text-left ml-12 sm:ml-24 mt-12 sm:mt-52 mb-12">
+            <div className="text-left ml-12 sm:ml-24 mt-52 mb-12">
                 <h2 className="text-4xl sm:text-6xl font-bold font-mono text-black">Products</h2>
                 <hr className="w-64 sm:w-80 h-1 my-2 bg-[#BA0C2F] border-1 rounded-sm" />
             </div>

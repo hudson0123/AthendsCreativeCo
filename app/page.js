@@ -13,10 +13,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative bg-[#F5F5F5]">
-      <div className="absolute top-1 left-1">
-        <a href="."><img src="./athenscreativecologo.png" className="h-auto object-contain" alt="Logo" /></a>
-      </div>
-
 
       <Navbar />
 

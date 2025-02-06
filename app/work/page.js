@@ -30,9 +30,6 @@ export default function Work() {
   return (
     <div className="h-screen overflow-hidden flex flex-col items-center justify-between bg-[#F5F5F5]">
       <nav className="bg-opacity-35 text-black p-4 fixed top-0 left-0 w-full z-50">
-        <div className="absolute top-1 left-1">
-          <a href="."><img src="./logo.ico" className="w-[150px] h-auto object-contain" alt="Logo" /></a>
-        </div>
         <div className="max-w-8xl px-3 mx-auto flex justify-end items-center">
           <ul className="flex space-x-6 text-xl">
             <li>

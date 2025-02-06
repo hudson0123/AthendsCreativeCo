@@ -63,7 +63,7 @@ const ScheduleMeetingButton = () => {
       <button
         onClick={handleScheduleClick}
         disabled={loading}
-        className={`fixed bottom-4 right-4 p-4 bg-[#BA0C2F] text-white font-bold rounded-md shadow-lg transition-all duration-500 hover:bg-red-700 ${
+        className={`z-50 fixed bottom-4 right-4 p-4 bg-[#BA0C2F] text-white font-bold rounded-md shadow-lg transition-all duration-500 hover:bg-red-700 ${
           loading ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >

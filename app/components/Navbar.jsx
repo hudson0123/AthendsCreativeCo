@@ -29,8 +29,13 @@ export default function Navbar() {
     return (
         <>
             <nav
-                className={`bg-opacity-35 text-black p-4 fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${showNav ? "translate-y-0" : "-translate-y-full"}`}
+                className={`bg-[#F5F5F5] text-black p-4 fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${showNav ? "translate-y-0" : "-translate-y-full"}`}
             >
+                <div className="fixed top-3 left-8 sm:w-[30vw] w-[50vw]">
+                    <a href="./">
+                        <img src="/athenscreativecologo.png" className="h-10 object-contain" alt="Logo" />
+                    </a>
+                </div>
                 <div className="px-3 mx-auto flex justify-end items-center">
                     <ul className="flex space-x-6 text-xl hidden md:flex">
                         <li>
@@ -62,19 +67,19 @@ export default function Navbar() {
             <ScheduleMeetingButton showScrollButton={showScrollButton} />
 
             {/* Mobile Nav Menu */}
-            <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"} absolute top-16 right-5 w-[20vw] bg-white shadow-lg`}>
-                <ul className="flex flex-col items-center py-4">
+            <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"} absolute top-5 right-5 w-[30vw] h-[25vh] bg-white shadow-lg`}>
+                <ul className="flex flex-col items-stretch p-4 gap-5">
                     <li>
-                        <a href="#about" className="py-2 text-lg text-[#BA0C2F] hover:text-black">About</a>
+                        <a href="#about" className="p-4 text-lg text-[#BA0C2F] hover:text-black">About</a>
                     </li>
                     <li>
-                        <a href="#services" className="py-2 text-lg text-[#BA0C2F] hover:text-black">Services</a>
+                        <a href="#services" className="p-4 text-lg text-[#BA0C2F] hover:text-black">Services</a>
                     </li>
                     <li>
-                        <a href="/work" className="py-2 text-lg text-[#BA0C2F] hover:text-black">Work</a>
+                        <a href="/work" className="p-4 text-lg text-[#BA0C2F] hover:text-black">Work</a>
                     </li>
                     <li>
-                        <a href="#connect" className="py-1 text-lg bg-[#BA0C2F] text-white font-semibold px-2 rounded-lg hover:bg-red-700 transition-colors">
+                        <a href="#connect" className="p-2 text-lg bg-[#BA0C2F] text-white font-semibold px-2 rounded-lg hover:bg-red-700 transition-colors">
                             Connect
                         </a>
                     </li>
