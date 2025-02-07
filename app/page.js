@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -23,7 +23,7 @@ export default function Home() {
         {/* Open Graph Tags */}
         <meta property="og:title" content="Creative Digital Marketing Agency in Athens, Georgia | Athens Creative Co" />
         <meta property="og:description" content="Athens Creative Co provides creative marketing and AI-driven digital solutions to businesses in Athens, Georgia, and surrounding areas. Specializing in SEO, social media, and web design." />
-        <meta property="og:image" content="https://athenscreativeco.com/home-stock.jpg" />
+        <meta property="og:image" content="https://athenscreativeco.com/favicon.ico" />
         <meta property="og:url" content="https://athenscreativeco.com" />
         <meta property="og:type" content="website" />
 
@@ -31,10 +31,13 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Creative Digital Marketing Agency in Athens, Georgia | Athens Creative Co" />
         <meta name="twitter:description" content="Athens Creative Co provides creative marketing and AI-driven digital solutions to businesses in Athens, Georgia, and surrounding areas. Specializing in SEO, social media, and web design." />
-        <meta name="twitter:image" content="https://athenscreativeco.com/home-stock.jpg" />
+        <meta name="twitter:image" content="https://athenscreativeco.com/favicon.ico" />
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://athenscreativeco.com" />
+
+        {/* Favicon for Tab Icon */}
+        <link rel="icon" href="https://athenscreativeco.com/favicon.ico" />
 
         {/* Schema Markup for Local Business */}
         <script
