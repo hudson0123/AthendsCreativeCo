@@ -43,7 +43,7 @@ export default function ContactForm() {
             <div className="flex flex-col md:grid md:grid-cols-2 md:gap-16 justify-between items-center py-16 px-6 md:px-16 pb-[5vh]">
                 {/* Title and Info Section */}
                 <div className="w-full flex flex-col justify-center items-start text-left mb-12 md:mb-0">
-                    <h2 className="text-4xl sm:text-6xl font-extrabold font-mono text-[#BA0C2F] leading-tight mb-6">
+                    <h2 className="text-4xl sm:text-6xl font-thin font-mono text-[#BA0C2F] leading-tight mb-6">
                         Let's Connect.
                     </h2>
                     <p className="text-lg sm:text-xl text-gray-600 mb-6 w-1/2">

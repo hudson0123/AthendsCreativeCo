@@ -22,10 +22,10 @@ export default function Footer() {
                 <a href="/work" className="hover:text-gray-200">Work</a>
               </li>
               <li>
-                <a href="/about" className="hover:text-gray-200">About</a>
+                <a href="/#about" className="hover:text-gray-200">About</a>
               </li>
               <li>
-                <a href="/services" className="hover:text-gray-200">Services</a>
+                <a href="/#services" className="hover:text-gray-200">Services</a>
               </li>
             </ul>
           </div>

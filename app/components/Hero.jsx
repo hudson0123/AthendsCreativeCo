@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
 
 export default function Hero() {
     const [fade, setFade] = useState(false);
@@ -40,10 +42,14 @@ export default function Hero() {
                             Athens, Georgia.
                         </span>
                     </h1>
-                    <hr className="w-40 h-1 my-2 bg-[#BA0C2F] border-1 rounded-sm" />
-                    <p className="text-lg md:text-xl font-sans mt-6 text-gray-500 max-w-sm">
-                        We provide creative marketing and AI-driven digital solutions to
-                        businesses in Athens, Georgia. Combining creativity and AI to craft
+                    <motion.hr
+                        className="w-64 sm:w-80 h-1 my-2 bg-[#BA0C2F] rounded-sm"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "130px" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.0, ease: "easeOut" }}
+                    />                    <p className="text-lg  mt-6 text-gray-500 max-w-xs font-[Helvetica]">
+                        Combining creativity and AI to craft
                         innovative digital solutions that elevate businesses to new heights.
                     </p>
                 </div>

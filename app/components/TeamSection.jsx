@@ -34,10 +34,10 @@ export default function TeamSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <div id="about"></div>
-            <div className="flex justify-center items-center mt-12">
+            <div className="flex justify-center  items-center mt-12">
                 <div className="text-center mt-24 z-10">
                     <motion.h2
-                        className="text-4xl sm:text-6xl font-bold font-mono z-10"
+                        className="text-4xl sm:text-6xl font-normal font-mono z-10"
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}

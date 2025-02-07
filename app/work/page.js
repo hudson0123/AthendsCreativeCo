@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { motion } from "framer-motion";
 
-
 export default function Work() {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,6 +13,8 @@ export default function Work() {
   });
 
   const [buttonText, setButtonText] = useState('Send Message');
+
+  const [expandedFaq, setExpandedFaq] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,6 +30,16 @@ export default function Work() {
       setFormData({ name: '', email: '', subject: '', message: '' });
     }, 1000);
   };
+
+  const toggleFaq = (index) => {
+    setExpandedFaq(expandedFaq === index ? null : index);
+  };
+
+  const faqs = [
+    { question: "What services do you offer?", answer: "We provide digital marketing, SEO, and AI-driven solutions tailored to your business needs." },
+    { question: "How can I become a partner?", answer: "Simply reach out to us through the contact form or via email and phone to discuss partnership opportunities." },
+    { question: "What makes you different from competitors?", answer: "Our personalized approach and integration of AI tools for efficiency set us apart from others." }
+  ];
 
   return (
     <div className="mt-10 overflow-hidden flex flex-col items-center justify-between bg-[#F5F5F5]">
@@ -53,27 +64,34 @@ export default function Work() {
       </div>
       <div className="flex-1 flex flex-col items-center justify-center text-center px-8 mt-10">
         <div id="about"></div>
-        <p className="text-lg md:text-xl text-gray-700 max-w-3xl">
-          Be a part of our initial client base and receive free or significantly discounted
-          services. Together, we’ll build something incredible for your business while
-          showcasing our expertise in delivering top-tier solutions.
-        </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full px-8 py-5 flex-none">
         <div className="flex flex-col justify-center">
-          <h2 className="text-2xl md:text-3xl font-bold font-mono text-black mb-4">Why Partner With Us?</h2>
-          <p className="text-lg text-gray-700 mb-4">
-            Joining as an early client means gaining access to premium services at reduced
-            costs. We aim to build long-term relationships with our partners while showcasing
-            our skills and delivering tangible results for your business.
-          </p>
-          <p className="text-lg text-gray-700">
-            For more information, feel free to contact us:
-          </p>
-          <p className="text-lg font-bold text-[#BA0C2F] mt-4">
-            📧 Email: hudsonodonnell2004@gmail.com <br />
-            📞 Phone: (706) 343-7446
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold font-mono text-black mb-4">FAQs</h2>
+          {faqs.map((faq, index) => (
+            <div key={index} className="mb-4">
+              <motion.div
+                className="cursor-pointer text-lg font-semibold text-[#BA0C2F]"
+                onClick={() => toggleFaq(index)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                {faq.question}
+              </motion.div>
+              {expandedFaq === index && (
+                <motion.div
+                  className="mt-2 text-gray-700"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {faq.answer}
+                </motion.div>
+              )}
+            </div>
+          ))}
         </div>
         <form
           id="connect"
