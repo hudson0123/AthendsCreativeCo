@@ -8,7 +8,8 @@ export default function RootLayout({ children, session }) {
     <SessionProvider session={session}>
       <html lang="en">
         <head>
-          <link rel="icon" href="/logo.ico" sizes="128x128"></link>
+          <link rel="icon" href="/favicon.ico" sizes="128x128"></link>
+          <link rel="icon" href="/favicon.ico" type="image/x-icon"></link>
           <title>Athens Creative Co</title>
         </head>
         

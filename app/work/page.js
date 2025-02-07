@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { motion } from "framer-motion";
+import emailjs from 'emailjs-com';
+
 
 export default function Work() {
   const [formData, setFormData] = useState({
@@ -12,8 +14,15 @@ export default function Work() {
     message: '',
   });
 
-  const [buttonText, setButtonText] = useState('Send Message');
+  useEffect(() => {
+    if (formSubmitted) {
+      const timer = setTimeout(() => setButtonText("Submit"), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [formSubmitted]);
 
+  const [buttonText, setButtonText] = useState('Send Message');
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState(null);
 
   const handleChange = (e) => {
@@ -23,12 +32,21 @@ export default function Work() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setButtonText('Sending...');
-    setTimeout(() => {
-      setButtonText('Send Message');
-      alert('Message sent!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1000);
+
+    if (!formSubmitted) {
+      setButtonText("Sending...");
+
+      emailjs.send('service_nvez149', 'template_pfysblt', formData, '7Xniu4oQAodcmMsLw')
+        .then((result) => {
+          console.log(result.text);
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setButtonText("Email Sent!");
+          setFormSubmitted(true);
+        }, (error) => {
+          console.log(error.text);
+          setButtonText("Failed to Send");
+        });
+    }
   };
 
   const toggleFaq = (index) => {

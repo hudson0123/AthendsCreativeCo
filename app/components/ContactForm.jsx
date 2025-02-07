@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import emailjs from 'emailjs-com';
 
 export default function ContactForm() {
-
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
@@ -11,6 +11,8 @@ export default function ContactForm() {
     });
 
     const [buttonText, setButtonText] = useState("Submit");
+    const [startTyping, setStartTyping] = useState(false);
+    const titleRef = useRef(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,12 +40,42 @@ export default function ContactForm() {
         });
     };
 
+    useEffect(() => {
+        if (formSubmitted) {
+            const timer = setTimeout(() => setButtonText("Submit"), 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [formSubmitted]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setStartTyping(true);
+                }
+            });
+        });
+
+        if (titleRef.current) {
+            observer.observe(titleRef.current);
+        }
+
+        return () => {
+            if (titleRef.current) {
+                observer.unobserve(titleRef.current);
+            }
+        };
+    }, []);
+
     return (
         <>
             <div className="flex flex-col md:grid md:grid-cols-2 md:gap-16 justify-between items-center py-16 px-6 md:px-16 pb-[5vh]">
                 {/* Title and Info Section */}
                 <div className="w-full flex flex-col justify-center items-start text-left mb-12 md:mb-0">
-                    <h2 className="text-4xl sm:text-6xl font-thin font-mono text-[#BA0C2F] leading-tight mb-6">
+                    <h2
+                        ref={titleRef}
+                        className={`text-4xl sm:text-6xl font-thin font-mono text-[#BA0C2F] leading-tight mb-6 ${startTyping ? 'typewriter-effect' : ''}`}
+                    >
                         Let's Connect.
                     </h2>
                     <p className="text-lg sm:text-xl text-gray-600 mb-6 w-1/2">
@@ -56,7 +88,7 @@ export default function ContactForm() {
                         </div>
                         {/* Email Info */}
                         <div className="flex items-center">
-                            <span className="text-gray-800 text-lg font-semibold">📧 hudsonodonnell2004@gmail.com</span>
+                            <span className="text-gray-800 text-lg font-semibold">📧 hudson@athenscreativeco.com</span>
                         </div>
                     </div>
                 </div>
@@ -113,6 +145,30 @@ export default function ContactForm() {
                     </form>
                 </div>
             </div>
+
+            <style jsx>{`
+                .typewriter-effect {
+                    display: inline-block;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    border-right: 2px solid black;
+                    animation: typing 2s steps(20, end), blink 1s step-end infinite;
+                }
+
+                @keyframes typing {
+                    from { width: 0; }
+                    to { width: 100%; }
+                }
+
+                @keyframes blink {
+                    50% { border-color: transparent; }
+                }
+
+                .typewriter-effect.disappear {
+                    animation: none;
+                    border: none;
+                }
+            `}</style>
         </>
-    )
-};
+    );
+}
