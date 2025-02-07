@@ -5,8 +5,8 @@ import Navbar from '../components/Navbar';
 import { motion } from "framer-motion";
 import emailjs from 'emailjs-com';
 
-
 export default function Work() {
+  const [formSubmitted, setFormSubmitted] = useState(false);  // Move this declaration up
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,16 +14,15 @@ export default function Work() {
     message: '',
   });
 
+  const [buttonText, setButtonText] = useState('Send Message');
+  const [expandedFaq, setExpandedFaq] = useState(null);
+
   useEffect(() => {
     if (formSubmitted) {
       const timer = setTimeout(() => setButtonText("Submit"), 5000);
       return () => clearTimeout(timer);
     }
   }, [formSubmitted]);
-
-  const [buttonText, setButtonText] = useState('Send Message');
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [expandedFaq, setExpandedFaq] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
