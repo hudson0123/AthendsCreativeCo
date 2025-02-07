@@ -21,21 +21,21 @@ export default function Hero() {
     }, []);
 
     return (
-        <div className="flex justify-center items-left mb-20 px-6 sm:mt-0 mt-12">
+        <div className="flex justify-center items-left mb-20 px-6 mt-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl w-full h-[92vh]">
                 {/* Left Column (Text) */}
-                <div className="rounded-lg flex flex-col justify-center md:mt-10 mt-8">
-                    <h1 className="text-4xl md:text-5xl font-[Helvetica] font-bold mb-8 mr-32">
+                <div className="rounded-lg flex flex-col justify-center mt-20 ">
+                    <h1 className="text-4xl md:text-6xl/snug font-[Helvetica]  mb-8 font-thin">
                         A{" "}
                         <span
-                            className={`inline-block transition-all duration-1000 transform text-[#BA0C2F] ${fade ? "opacity-0 translate-x-10" : "opacity-100 -translate-x-0"
+                            className={`inline-block transition-all duration-1000 font-semibold transform text-[#BA0C2F] ${fade ? "opacity-0 translate-x-10" : "opacity-100 -translate-x-0"
                                 }`}
                         >
                             {currentAdjective}
                         </span>{" "}
                         <br></br> Approach to Digital Marketing in <br></br>{" "}
                         <span
-                            className={`inline-block transition-all duration-1000 transform text-[#BA0C2F]`}
+                            className={`font-semibold inline-block transition-all duration-1000 transform text-[#BA0C2F]`}
                         >
                             Athens, Georgia.
                         </span>
@@ -46,12 +46,6 @@ export default function Hero() {
                         businesses in Athens, Georgia. Combining creativity and AI to craft
                         innovative digital solutions that elevate businesses to new heights.
                     </p>
-                    {/* "Let's get to work" Button */}
-                    <a href="./#connect">
-                        <button className="text-2xl font-semibold rounded-md mt-10 relative h-16 w-60 overflow-hidden border border-[#BA0C2F] bg-[#BA0C2F] text-white shadow-md transition-all hover:shadow-[#BA0C2F]">
-                            <span className="relative z-10">Let's Get to Work.</span>
-                        </button>
-                    </a>
                 </div>
 
                 {/* Right Column (Image, only visible on medium screens and up) */}
