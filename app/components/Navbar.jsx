@@ -32,23 +32,23 @@ export default function Navbar() {
                 className={`bg-[#F5F5F5] text-black p-4 fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${showNav ? "translate-y-0" : "-translate-y-full"}`}
             >
                 <div className="fixed top-3 left-8 sm:w-[30vw] w-[50vw]">
-                    <a href="./">
+                    <a href="./" className="cursor-pointer">
                         <img src="/athenscreativecologo.png" className="h-10 object-contain" alt="Logo" />
                     </a>
                 </div>
                 <div className="px-3 mx-auto flex justify-end items-center">
                     <ul className="flex space-x-6 text-xl hidden md:flex">
                         <li>
-                            <a href="#about" className="hover:text-black text-[#BA0C2F]">About</a>
+                            <a href="/#about" className="hover:text-black text-[#BA0C2F]">About</a>
                         </li>
                         <li>
-                            <a href="#services" className="hover:text-black text-[#BA0C2F]">Services</a>
+                            <a href="/#services" className="hover:text-black text-[#BA0C2F]">Services</a>
                         </li>
                         <li>
                             <a href="/work" className="hover:text-black text-[#BA0C2F]">Work</a>
                         </li>
                         <li>
-                            <a href="#connect" className="bg-[#BA0C2F] text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
+                            <a href="/#connect" className="bg-[#BA0C2F] text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
                                 Connect
                             </a>
                         </li>

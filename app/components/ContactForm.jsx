@@ -40,13 +40,13 @@ export default function ContactForm() {
 
     return (
         <>
-            <div className="flex flex-col md:grid md:grid-cols-2 md:gap-16 justify-between items-center py-16 px-6 md:px-16 pb-[20vh]">
+            <div className="flex flex-col md:grid md:grid-cols-2 md:gap-16 justify-between items-center py-16 px-6 md:px-16 pb-[5vh]">
                 {/* Title and Info Section */}
-                <div className="w-full md:w-1/2 flex flex-col justify-center items-start text-left mb-12 md:mb-0">
+                <div className="w-full flex flex-col justify-center items-start text-left mb-12 md:mb-0">
                     <h2 className="text-4xl sm:text-6xl font-extrabold font-mono text-[#BA0C2F] leading-tight mb-6">
                         Let's Connect.
                     </h2>
-                    <p className="text-lg sm:text-xl text-gray-600 mb-6">
+                    <p className="text-lg sm:text-xl text-gray-600 mb-6 w-1/2">
                         Have a question or want to work together? Feel free to get in touch with us!
                     </p>
                     <div className="space-y-4">
@@ -71,7 +71,7 @@ export default function ContactForm() {
                             placeholder="Name"
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm sm:text-base outline-[#BA0C2F] focus:bg-white focus:ring-2 focus:ring-[#BA0C2F]"
+                            className="w-full border-b-2 rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm sm:text-base outline-[#BA0C2F] focus:bg-white focus:ring-2 focus:ring-[#BA0C2F]"
                             required
                         />
                         <input

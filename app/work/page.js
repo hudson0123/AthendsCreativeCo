@@ -1,6 +1,9 @@
 "use client"
 
 import React, { useState } from 'react';
+import Navbar from '../components/Navbar';
+import { motion } from "framer-motion";
+
 
 export default function Work() {
   const [formData, setFormData] = useState({
@@ -28,39 +31,29 @@ export default function Work() {
   };
 
   return (
-    <div className="h-screen overflow-hidden flex flex-col items-center justify-between bg-[#F5F5F5]">
-      <nav className="bg-opacity-35 text-black p-4 fixed top-0 left-0 w-full z-50">
-        <div className="max-w-8xl px-3 mx-auto flex justify-end items-center">
-          <ul className="flex space-x-6 text-xl">
-            <li>
-              <a href="./#about" className="hover:text-black text-[#BA0C2F]">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="./#services" className="hover:text-black text-[#BA0C2F]">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="/work" className="hover:text-black text-[#BA0C2F]">
-                Work
-              </a>
-            </li>
-            <li>
-              <a
-                href="./#connect"
-                className="bg-[#BA0C2F] text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors"
-              >
-                Connect
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <div className="mt-10 overflow-hidden flex flex-col items-center justify-between bg-[#F5F5F5]">
+      <Navbar />
+      <div className="text-center mt-24 z-10">
+        <motion.h2
+          className="text-4xl sm:text-6xl font-bold font-mono z-0"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
+          Partner With Us
+        </motion.h2>
+        <motion.hr
+          className="w-[35vw] h-1 my-2 bg-[#BA0C2F] border-1 rounded-sm z-10"
+          initial={{ width: 0 }}
+          whileInView={{ width: "35vw" }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.0, ease: "easeOut" }}
+        ></motion.hr>
+      </div>
       <div className="flex-1 flex flex-col items-center justify-center text-center px-8 mt-10">
-        <h1 className="text-5xl font-bold font-mono text-black mb-4">Partner With Us</h1>
-        <p className="text-lg text-gray-700 max-w-3xl">
+        <div id="about"></div>
+        <p className="text-lg md:text-xl text-gray-700 max-w-3xl">
           Be a part of our initial client base and receive free or significantly discounted
           services. Together, we’ll build something incredible for your business while
           showcasing our expertise in delivering top-tier solutions.
@@ -68,7 +61,7 @@ export default function Work() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full px-8 py-5 flex-none">
         <div className="flex flex-col justify-center">
-          <h2 className="text-3xl font-bold font-mono text-black mb-4">Why Partner With Us?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold font-mono text-black mb-4">Why Partner With Us?</h2>
           <p className="text-lg text-gray-700 mb-4">
             Joining as an early client means gaining access to premium services at reduced
             costs. We aim to build long-term relationships with our partners while showcasing
@@ -87,7 +80,7 @@ export default function Work() {
           className="space-y-4 border border-gray-200 rounded-lg shadow-lg p-6 bg-white"
           onSubmit={handleSubmit}
         >
-          <h2 className="text-3xl font-bold font-mono text-black mb-4">Get In Touch</h2>
+          <h2 className="text-2xl md:text-3xl font-bold font-mono text-black mb-4">Get In Touch</h2>
           <input
             type="text"
             name="name"

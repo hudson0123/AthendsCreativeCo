@@ -1,30 +1,40 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function ProductsGrid() {
     const products = [
         { name: "SEO Optimization", icon: "./seo-icon.svg", description: "Boost your website's search engine rankings and visibility." },
         { name: "Community Engagement", icon: "./social-media-icon.svg", description: "Foster meaningful connections with your audience on social platforms." },
         { name: "Content Creation", icon: "./content-icon.svg", description: "Craft engaging and high-quality content tailored to your brand." },
-        { name: "Google Business Optimization", icon: "./google-icon.svg", description: "Gain valuable insights with comprehensive analytics and reports." },
+        { name: "Google Business Optimization", icon: "./google-icon.svg", description: "Optimize your Google Business profile for increased local visibility and customer engagement." },
         { name: "Web Development", icon: "./web-dev-icon.svg", description: "Build modern, responsive, and high-performing websites." },
         { name: "Missed Call Textback", icon: "./callback-icon.svg", description: "Ensure no lead is left behind with instant missed-call responses." },
         { name: "Personalized Chatbot", icon: "./chatbot-icon.svg", description: "Provide instant support and engagement with a custom chatbot." },
         { name: "Email Marketing", icon: "./email-icon.svg", description: "Reach your audience effectively with targeted email campaigns." }
     ];
 
+
     return (
         <>
             <div id="services"></div>
             <div className="text-left ml-12 sm:ml-24 mt-52 mb-12">
                 <h2 className="text-4xl sm:text-6xl font-bold font-mono text-black">Products</h2>
-                <hr className="w-64 sm:w-80 h-1 my-2 bg-[#BA0C2F] border-1 rounded-sm" />
+                <hr className="w-64 sm:w-80 h-1 my-2 bg-[#BA0C2F] rounded-sm" />
             </div>
             <div className="flex justify-center items-center mb-32">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 max-w-7xl mx-auto">
                     {products.map((product, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="relative group flex flex-col items-center text-center p-4 border border-[#F5F5F5] rounded-lg transition-all duration-500"
+                            className="relative group flex flex-col items-center text-center p-4 rounded-lg transition-all duration-500"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }} // Trigger when 20% of the element is in view
+                            transition={{
+                                delay: Math.random() * 0.5, // Random delay for staggered animation
+                                duration: 0.8,
+                                ease: 'easeOut'
+                            }}
                         >
                             <img
                                 src={product.icon}
@@ -39,7 +49,7 @@ export default function ProductsGrid() {
                                     {product.description}
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
