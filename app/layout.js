@@ -3,7 +3,12 @@ import { SessionProvider } from "next-auth/react";
 
 export const metadata = {
   title: "Athens Creative Co",
-  description: "Digital Marketing Agency in Athens, Ga."
+  description: "Digital Marketing Agency in Athens, Ga.",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  }
 }
 
 export default function RootLayout({ children, session }) {
