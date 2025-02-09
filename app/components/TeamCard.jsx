@@ -1,9 +1,10 @@
 import React from 'react';
+import Image from 'next/image'
 
 function TeamCard({ member }) {
     return (
         <div className="flex flex-col items-center">
-            <img
+            <Image
                 src={member.image}
                 alt={member.name}
                 className="w-full h-3/5 object-cover rounded-lg mb-4"

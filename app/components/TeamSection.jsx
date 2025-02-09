@@ -7,21 +7,19 @@ export default function TeamSection() {
     const teamMembers = [
         {
             name: "Hudson O'Donnell",
-            title: "Founder & CEO",
+            title: "Technical Lead",
             description:
-                "Hudson O'Donnell is the Founder and CEO of Athens Creative Co. With a strong background in the technology industry, Hudson combines strategic thinking with a passion for business to deliver innovative solutions that elevate businesses to new heights. He earned his degree from the University of Georgia, where he developed a deep understanding of technology and computer science. Hudson leads his team with a visionary approach, ensuring each project is both impactful and tailored to clients' needs.",
+                "Hudson O'Donnell is the Technical Lead of Athens Creative Co. With a strong background in the technology industry, Hudson combines strategic thinking with a passion for business to deliver innovative solutions that elevate businesses to new heights. He earned his degree from the University of Georgia, where he developed a deep understanding of technology and computer science. Hudson leads his team with a visionary approach, ensuring each project is both impactful and tailored to clients' needs.",
             image: "/team-member-1.jpeg",
             linkedin: "https://www.linkedin.com/in/hudsonlo/", // Replace with actual LinkedIn URL
-            instagram: "https://www.instagram.com/hudsonodonnell", // Replace with actual Instagram URL
         },
         {
             name: "Jaci Thompson",
-            title: "Creative Director",
+            title: "Marketing Lead",
             description:
-                "Jaci Thompson serves as the Chief Marketing Officer at Athens Creative Co. With a strong background in marketing, Jaci leads the agency's marketing strategies, ensuring that each campaign is both innovative and effective. Her passion for business drives her to deliver impactful results for clients, leveraging her expertise to enhance brand visibility and engagement.",
+                "Jaci Thompson serves as the Marketing Lead at Athens Creative Co. With a strong background in marketing, Jaci leads the agency's marketing strategies, ensuring that each campaign is both innovative and effective. Her passion for business drives her to deliver impactful results for clients, leveraging her expertise to enhance brand visibility and engagement.",
             image: "/team-member-2.jpeg",
             linkedin: "https://www.linkedin.com/in/jaci-thompson0/", // Replace with actual LinkedIn URL
-            instagram: "https://www.instagram.com/jacithompson", // Replace with actual Instagram URL
         },
     ];
 

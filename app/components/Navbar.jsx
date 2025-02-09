@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import QuoteButton from './ScheduleMeetingButton';  // Import the QuoteButton component
 import ScheduleMeetingButton from "./ScheduleMeetingButton";
+import Image from 'next/image'
+
 
 export default function Navbar() {
     const [showNav, setShowNav] = useState(true);
@@ -33,7 +35,14 @@ export default function Navbar() {
             >
                 <div className="fixed top-3 left-8 sm:w-[30vw] w-[50vw]">
                     <a href="./" className="cursor-pointer">
-                        <img src="/athenscreativecologo.png" className="h-10 object-contain" alt="Logo" />
+                        <Image
+                            src="/athenscreativecologo.png"
+                            alt="Athens Creative Co Logo - Marketing and Creative Solutions"
+                            width={400}
+                            height={800}
+                            priority
+                            className="h-8 md:h-10 lg:h-12 object-contain"
+                        />
                     </a>
                 </div>
                 <div className="px-3 mx-auto flex justify-end items-center">

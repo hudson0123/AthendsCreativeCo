@@ -1,20 +1,22 @@
-"use client"
-
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 
+export const metadata = {
+  title: "Athens Creative Co",
+  description: "Digital Marketing Agency in Athens, Ga."
+}
+
 export default function RootLayout({ children, session }) {
   return (
-    <SessionProvider session={session}>
-      <html lang="en">
-        <head>
-          <link rel="icon" href="/favicon.ico" sizes="128x128"></link>
-          <link rel="icon" href="/favicon.ico" type="image/x-icon"></link>
-          <title>Athens Creative Co</title>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: `
+    <html lang="en">
+      <head>
+        <link rel="canonical" href="https://athenscreativeco.com/" />
+        <link rel="icon" href="/favicon.ico" sizes="128x128"></link>
+        <title>Athens Creative Co</title>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
               {
                 "@context": "https://schema.org",
                 "@type": "Article",
@@ -36,15 +38,14 @@ export default function RootLayout({ children, session }) {
                 "dateModified": "2025-02-07T09:00:00+00:00"
               }
             `,
-            }}
-          />
-          <link rel="icon" href="http://athenscreativeco.com/favicon.ico"></link>
-        </head>
+          }}
+        />
+        <link rel="icon" href="http://athenscreativeco.com/favicon.ico"></link>
+      </head>
 
-        <body className="bg-[#F5F5F5]">
-          {children}
-        </body>
-      </html>
-    </SessionProvider>
+      <body className="bg-[#F5F5F5]">
+        {children}
+      </body>
+    </html>
   );
 }

@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from 'next/image'
+
 
 
 export default function Hero() {
@@ -58,9 +60,11 @@ export default function Hero() {
 
                 {/* Right Column (Image, only visible on medium screens and up) */}
                 <div className="hidden md:block w-full md:w-[50vw] h-[60vh] md:h-[93vh] mt-8 md:mt-[8vh]">
-                    <img
+                    <Image
                         src="/home-stock.jpg"
                         alt="Athens Georgia Marketing Agency - Creative Digital Solutions"
+                        width={1920}
+                        height={1080}
                         className="w-full h-full object-cover filter grayscale"
                     />
                 </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image'
 
 export default function ProductsGrid() {
     const products = [
@@ -49,9 +50,11 @@ export default function ProductsGrid() {
                                 ease: 'easeOut'
                             }}
                         >
-                            <img
+                            <Image
                                 src={product.icon}
                                 alt={product.name}
+                                width={64} // Matches "w-16" (16 * 4px)
+                                height={64} // Matches "h-16"
                                 className="w-16 h-16 sm:w-20 sm:h-20 mb-4 group-hover:w-8 group-hover:pb-8 transition-all duration-500"
                             />
                             <p className="text-lg sm:text-xl font-normal font-mono opacity-100 group-hover:opacity-0 transition-opacity duration-500">
