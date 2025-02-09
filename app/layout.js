@@ -5,9 +5,9 @@ export const metadata = {
   title: "Athens Creative Co",
   description: "Digital Marketing Agency in Athens, Ga.",
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: '/favicon144.png',
+    shortcut: '/favicon144.png',
+    apple: '/favicon144.png',
   }
 }
 
